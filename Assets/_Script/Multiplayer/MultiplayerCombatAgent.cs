@@ -31,17 +31,20 @@ public class MultiplayerCombatAgent : NetworkBehaviour
         {
             attacks.Add(a.GetType().Name, a);
             a.OnAttack += OnAttack;
+            Debug.Log($"MultiplayerCombatAgent: {name} registers attack {a.GetType().Name}", gameObject);
         }
     }
 
-    private void OnAttack(string obj)
+    private void OnAttack(string type)
     {
-        RpcAttack(obj);
+        RpcAttack(type);
+        Debug.Log($"MultiplayerCombatAgent: {name} attack {type} triggers RPC", gameObject);
     }
 
     [Rpc(RpcSources.InputAuthority, RpcTargets.Proxies)]
     private void RpcAttack(string type)
     {
         attacks[type].StartAttack(true);
+        Debug.Log($"MultiplayerCombatAgent: {name} attack {type} triggered by RPC", gameObject);
     }
 }

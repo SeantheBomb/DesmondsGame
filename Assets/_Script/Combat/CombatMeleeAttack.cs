@@ -56,11 +56,11 @@ public class CombatMeleeAttack : MonoBehaviour, IAttack
 
     public void StartAttack(bool displayOnly = false)
     {
-        if(isAttacking == false && isPlayer)
+        if(isAttacking == false)
         {
             PlayAudio();
             if(displayOnly == false)OnAttack?.Invoke(GetType().Name);
-            StartCoroutine (SwingSword(displayOnly));
+            StartCoroutine (SwingSword(displayOnly || isPlayer == false));
         }
     }
 
