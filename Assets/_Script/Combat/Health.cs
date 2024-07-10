@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
 
     public float TakeDamage(DamageInfo damage)
     {
+        Debug.Log($"{name} took {damage.healthTaken} damage from {damage.source.name}", damage.source);
         if (immune)
             return health;
         StartCoroutine(PlayIFrames());

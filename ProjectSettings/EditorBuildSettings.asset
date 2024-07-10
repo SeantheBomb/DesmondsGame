@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Water Dungeon.unity
+    path: Assets/_Scenes/_MAIN_MENU_.unity
+    guid: 184972f2d5c16c644b9575c761d3f88f
+  - enabled: 1
+    path: Assets/_Scenes/Water Dungeon.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Fire Dungeon.unity
+    path: Assets/_Scenes/Fire Dungeon.unity
     guid: 620ed953af77d414eadeb95664a98a3e
   - enabled: 1
-    path: Assets/Scenes/Air Dungeon.unity
+    path: Assets/_Scenes/Air Dungeon.unity
     guid: 960bfd540c9a4404794ab8180d4d5a20
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/_Scenes/GameOver.unity
     guid: 38dfb64280c4d6e43973afc8cc7882f7
+  - enabled: 1
+    path: Assets/_Scenes/Banana Race.unity
+    guid: e4d1d5096e759fb4086a2c760a6ff57d
   m_configObjects: {}
