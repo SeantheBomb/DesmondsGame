@@ -7,7 +7,7 @@ using UnityEngine;
 public class MultiplayerCombatAgent : NetworkBehaviour
 {
 
-    [SerializeField] CombatAgent agent;
+    public CombatAgent agent { get; protected set; }
 
 
     Dictionary<string, IAttack> attacks;
