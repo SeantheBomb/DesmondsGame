@@ -48,7 +48,7 @@ public class CombatMeleeAttack : MonoBehaviour
 
     public void StartSwing()
     {
-        if(isAttacking == false)
+        if(isAttacking == false && isPlayer)
         {
             PlayAudio();
             StartCoroutine (SwingSword());

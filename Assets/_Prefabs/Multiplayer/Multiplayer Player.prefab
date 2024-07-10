@@ -77,6 +77,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1886506044784661987, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 802699928970715773}
+    - targetCorrespondingSourceObject: {fileID: 1886506044784661987, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6368391647981547611}
   m_SourcePrefab: {fileID: 100100000, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
 --- !u!1 &820652506758184415 stripped
 GameObject:
@@ -102,6 +105,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 8202906937653100553}
   - {fileID: 802699928970715773}
+  - {fileID: 6368391647981547611}
 --- !u!114 &8202906937653100553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +134,20 @@ MonoBehaviour:
   SyncParent: 0
   _autoAOIOverride: 1
   DisableSharedModeInterpolation: 1
+--- !u!114 &6368391647981547611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820652506758184415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588111ec7a72dc343a177cf99ebcef89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 4637108365047757596, guid: e2d71ab2fd886914cb72a9cfecde2afb, type: 3}
+  - {fileID: 1996966068982305382, guid: 1d8eaac2345278f45a9f6d30c0603760, type: 3}
+  - {fileID: 8545482876543197496, guid: f1eeccb1cd5970b449ad5e0d8c6e177d, type: 3}
+  - {fileID: -5511364272568654466, guid: 5d7a6c3f13789904da74a51c9e09411c, type: 3}
