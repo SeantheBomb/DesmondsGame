@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(CombatAgent))]
-public class CombatMeleeAttack : MonoBehaviour
+public class CombatMeleeAttack : MonoBehaviour, IAttack
 {
 
     public bool swordEquipped = false;
@@ -25,6 +25,14 @@ public class CombatMeleeAttack : MonoBehaviour
 
     Vector3 startRot;
 
+    private event System.Action<string> _onAttack;
+
+    public System.Action<string> OnAttack
+    {
+        get { return _onAttack; }
+        set { _onAttack = value; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,17 +49,18 @@ public class CombatMeleeAttack : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartSwing();
+            StartAttack();
         }
     }
     
 
-    public void StartSwing()
+    public void StartAttack(bool displayOnly = false)
     {
         if(isAttacking == false && isPlayer)
         {
             PlayAudio();
-            StartCoroutine (SwingSword());
+            if(displayOnly == false)OnAttack?.Invoke(GetType().Name);
+            StartCoroutine (SwingSword(displayOnly));
         }
     }
 
@@ -63,7 +72,7 @@ public class CombatMeleeAttack : MonoBehaviour
     }
 
 
-    IEnumerator SwingSword()
+    IEnumerator SwingSword(bool displayOnly = false)
     {
         isAttacking = true;
         Vector3 endRot = startRot + Vector3.forward * -45f;
@@ -72,7 +81,7 @@ public class CombatMeleeAttack : MonoBehaviour
             sword.transform.localEulerAngles = Vector3.Lerp(startRot, endRot, i/0.25f);
             yield return null;
         }
-        agent.AttackOverlapCircle(swordDamage, swordRadius);
+        if(displayOnly == false)agent.AttackOverlapCircle(swordDamage, swordRadius);
         for (float i = 0; i < 0.5f; i += Time.deltaTime)
         {
             sword.transform.localEulerAngles = Vector3.Lerp(endRot, startRot, i/0.5f);

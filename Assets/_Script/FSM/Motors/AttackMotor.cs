@@ -15,7 +15,7 @@ public class AttackMotor : AgentMotor
 
     public override IEnumerator RunTask(AgentController agent)
     {
-        m_Attack.StartSwing();
+        m_Attack.StartAttack();
         yield return null;
     }
 

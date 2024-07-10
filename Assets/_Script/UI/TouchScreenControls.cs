@@ -35,7 +35,7 @@ public class TouchScreenControls : MonoBehaviour
         }
         if(attack.isPressed)
         {
-            meleeAttack.StartSwing();
+            meleeAttack.StartAttack();
         }
     }
 }
