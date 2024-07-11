@@ -22,17 +22,12 @@ public class MultiplayerHealth : NetworkBehaviour
     bool isTakingDamage;
     private void OnTakeDamage(DamageInfo info)
     {
-        isTakingDamage = true;
         RpcTakeDamage(info.healthTaken, info.hitPoint, info.source.GetComponent<NetworkObject>());
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     private void RpcTakeDamage(float damage, Vector3 point, NetworkId sourceId)
-    {
-        if (isTakingDamage)
-            return;
-        isTakingDamage = false;
-        
+    {        
         health.TakeDamage(new DamageInfo { healthTaken = damage, hitPoint = point, source = Runner.TryGetNetworkedBehaviourFromNetworkedObjectRef<MultiplayerCombatAgent>(sourceId).agent});
     }
 }
