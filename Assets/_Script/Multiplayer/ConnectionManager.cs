@@ -1,4 +1,5 @@
 using Fusion;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,17 @@ public class ConnectionManager : MonoBehaviour
             MatchmakingMode = Fusion.Photon.Realtime.MatchmakingMode.FillRoom,
             PlayerCount = 4
         });
+
+        SceneManager.activeSceneChanged += OnSceneLoad;
     }
 
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= OnSceneLoad;
+    }
 
+    private void OnSceneLoad(Scene arg0, Scene arg1)
+    {
+        runner.Shutdown();
+    }
 }
