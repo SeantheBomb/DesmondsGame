@@ -20,8 +20,6 @@ public class ConnectionManager : MonoBehaviour
         runner.StartGame(new StartGameArgs
         {
             GameMode = GameMode.Shared,
-            SessionName = scene.name,
-            Scene = SceneRef.FromIndex(scene.buildIndex),
             MatchmakingMode = Fusion.Photon.Realtime.MatchmakingMode.FillRoom,
             PlayerCount = 4
         });
