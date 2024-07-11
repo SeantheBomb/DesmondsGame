@@ -22,6 +22,13 @@ public class Health : MonoBehaviour
 
     public AudioClip sfx;
 
+
+    private void OnEnable()
+    {
+        immune = false;
+    }
+
+
     public float TakeDamage(DamageInfo damage)
     {
         Debug.Log($"{name} took {damage.healthTaken} damage from {damage.source.name}", damage.source);
