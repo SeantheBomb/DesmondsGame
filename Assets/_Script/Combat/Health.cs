@@ -60,6 +60,13 @@ public class Health : MonoBehaviour
         return health;
     }
 
+    public float ResetHealth()
+    {
+        health = maxHealth;
+        OnHeal?.Invoke(health);
+        return health;
+    }
+
     DamageInfo ProcessDamage(DamageInfo damage)
     {
         IDamageReceiver[] receivers = GetComponentsInChildren<IDamageReceiver>();

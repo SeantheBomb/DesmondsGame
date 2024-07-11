@@ -57,7 +57,7 @@ public class MultiplayerSpawnController : NetworkBehaviour
             return;
         gameOverScreen.SetActive(false);
         transform.position = MultiplayerSpawnPoint.GetSpawnPoint();
-        health.Heal(health.maxHealth - health.health);
+        health.ResetHealth();
     }
 
 }
