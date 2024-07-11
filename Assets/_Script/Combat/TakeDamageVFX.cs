@@ -20,7 +20,7 @@ public class TakeDamageVFX : MonoBehaviour, IDamageReceiver
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if (sprite == null) sprite = GetComponent<SpriteRenderer>(); 
         sprite.enabled = false;

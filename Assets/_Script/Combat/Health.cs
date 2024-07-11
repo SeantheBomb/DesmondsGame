@@ -74,7 +74,7 @@ public class Health : MonoBehaviour
     [Button]
     void TakeDamage()
     {
-        TakeDamage(new DamageInfo() { hitPoint = (Vector2)transform.position + Random.insideUnitCircle });
+        TakeDamage(new DamageInfo() { hitPoint = (Vector2)transform.position + Random.insideUnitCircle, source = GetComponent<CombatAgent>(), healthTaken = 10 });
     }
     
 }

@@ -17,9 +17,12 @@ public class MultiplayerHealth : NetworkBehaviour
         health ??= GetComponent<Health>();
 
         health.OnTakeDamage += OnTakeDamage;
+        health.OnDeath += OnTakeDamage;
+        health.OnHeal += RpcHeal;
     }
 
-    bool isTakingDamage;
+    
+
     private void OnTakeDamage(DamageInfo info)
     {
         RpcTakeDamage(info.healthTaken, info.hitPoint, info.source.GetComponent<NetworkObject>());
@@ -30,4 +33,13 @@ public class MultiplayerHealth : NetworkBehaviour
     {        
         health.TakeDamage(new DamageInfo { healthTaken = damage, hitPoint = point, source = Runner.TryGetNetworkedBehaviourFromNetworkedObjectRef<MultiplayerCombatAgent>(sourceId).agent});
     }
+
+
+    [Rpc(RpcSources.InputAuthority, RpcTargets.Proxies)]
+    private void RpcHeal(float health)
+    {
+        this.health.Heal(health);
+    }
+
+
 }

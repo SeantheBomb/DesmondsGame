@@ -68,6 +68,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8095220701608847153, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095220701608847153, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095220701608847153, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2706241172329105535, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
     m_RemovedGameObjects: []
@@ -91,6 +103,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1886506044784661987, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4452663242004125437}
+    - targetCorrespondingSourceObject: {fileID: 1886506044784661987, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5605417106584349616}
   m_SourcePrefab: {fileID: 100100000, guid: 393b4782c49710c4d9cf31e6b09c8cfb, type: 3}
 --- !u!1 &820652506758184415 stripped
 GameObject:
@@ -119,6 +134,7 @@ MonoBehaviour:
   - {fileID: 6368391647981547611}
   - {fileID: 531218073232011856}
   - {fileID: 4452663242004125437}
+  - {fileID: 5605417106584349616}
 --- !u!114 &8202906937653100553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +205,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
+--- !u!114 &5605417106584349616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820652506758184415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe4a6d58ce8aa64bb16dfac4cac2412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  gameOverScreen: {fileID: 525457529421624985, guid: f49c09538274fb74b98f5a375403dce0, type: 3}
