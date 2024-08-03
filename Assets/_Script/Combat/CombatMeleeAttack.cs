@@ -15,7 +15,7 @@ public class CombatMeleeAttack : MonoBehaviour, IAttack
 
     public GameObject sword;
 
-    public bool isPlayer;
+    //public bool isPlayer;
 
     bool isAttacking;
 
@@ -44,7 +44,7 @@ public class CombatMeleeAttack : MonoBehaviour, IAttack
     // Update is called once per frame
     void Update()
     {
-        if (!isPlayer)
+        if (!agent.IsPlayer)
             return;
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -56,7 +56,7 @@ public class CombatMeleeAttack : MonoBehaviour, IAttack
 
     public void StartAttack(bool displayOnly = false)
     {
-        if(displayOnly == false && isPlayer == false)
+        if(displayOnly == false && agent.IsProxy)
         {
             return;
         }
@@ -109,3 +109,4 @@ public class CombatMeleeAttack : MonoBehaviour, IAttack
         AudioSource.PlayClipAtPoint(clip, transform.position);
     }
 }
+

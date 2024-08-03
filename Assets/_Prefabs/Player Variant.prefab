@@ -3267,6 +3267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+  type: 1
 --- !u!114 &9115249814934466654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3283,7 +3284,6 @@ MonoBehaviour:
   swordRadius: 2
   swordDamage: 2
   sword: {fileID: 8353692960440055714}
-  isPlayer: 1
   sfx:
   - {fileID: 8300000, guid: 6e6b616e4d89bff43b69c903e8217f33, type: 3}
   - {fileID: 8300000, guid: 0c53aa18ac24b4d44964a9c6476f6182, type: 3}

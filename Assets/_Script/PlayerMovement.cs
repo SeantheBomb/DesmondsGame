@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 dir;
 
-    private void Start()
+    private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ClearDir());

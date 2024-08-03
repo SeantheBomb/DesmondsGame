@@ -6,6 +6,14 @@ public class CombatAgent : MonoBehaviour
 {
 
     public int team = 0;
+
+    public AgentType type;
+
+    public bool IsPlayer => type == AgentType.Player;
+
+    public bool IsNPC => type == AgentType.NPC;
+
+    public bool IsProxy => type == AgentType.Proxy;
     
     public DamageInfo Damage(Health health, float healthTaken)
     {
@@ -64,4 +72,11 @@ public struct DamageInfo
     public CombatAgent source;
     public float healthTaken;
     public Vector2 hitPoint;
+}
+
+public enum AgentType
+{
+    NPC,
+    Player,
+    Proxy
 }

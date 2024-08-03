@@ -26,7 +26,7 @@ public class MultiplayerConfigurePlayer : NetworkBehaviour
         if (Object.IsProxy)
         {
             movement.enabled = false;
-            attack.isPlayer = false;
+            attack.GetComponent<CombatAgent>().type = AgentType.Proxy;
             camera.gameObject.SetActive(false);
         }
         EnableComponents();
